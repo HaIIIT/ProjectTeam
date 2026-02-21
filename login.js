@@ -50,19 +50,20 @@ document.addEventListener("DOMContentLoaded", function () {
         window.location.href = "home.html";
       }, 600);
     } else {
-      let overlay = document.getElementById("overlay");
-      let formBox = document.querySelector(".login-box");
-
-      overlay.classList.add("active");
-      formBox.classList.add("shake");
-
-      setTimeout(() => {
-        formBox.classList.remove("shake");
-      }, 400);
-
-      setTimeout(() => {
-        overlay.classList.remove("active");
-      }, 3000);
+        let overlay = document.getElementById("overlay");
+        let formBox = document.querySelector(".login-box");
+        if (overlay) {
+          overlay.classList.add("active");
+        }
+        if (formBox) {
+          formBox.classList.add("shake");
+          setTimeout(() => {
+            formBox.classList.remove("shake");
+          }, 400);
+        }
+        setTimeout(() => {
+          if (overlay) overlay.classList.remove("active");
+        }, 3000);
     }
   });
 });

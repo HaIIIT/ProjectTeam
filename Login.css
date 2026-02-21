@@ -8,11 +8,13 @@
 /* ===== BODY ===== */
 body {
   min-height: 100vh;
-  padding-top: 50px; /* đúng bằng chiều cao header */
+  padding-top: 50px; /* bằng header */
   background: rgb(23, 23, 118);
   font-family: Arial, sans-serif;
+
   display: flex;
-  flex-direction: column;
+  justify-content: center;   /* căn giữa dọc */
+  align-items: center;       /* căn giữa ngang */
 
   opacity: 0;
   transition: opacity 0.6s ease;
@@ -50,12 +52,12 @@ body.fade-out {
 /* ===== LOGO HEADER ===== */
 .top-logo {
   position: absolute;
-  left: 10px;
-  top: 5px;
+  left: 8px;
+  top: 13px;
 }
 
 .top-logo img {
-  width: 40px;
+  width: 50px;
   height: auto;
 }
 
@@ -70,12 +72,20 @@ img {
   padding: 30px;
   border-radius: 15px;
   width: 300px;
-  margin: 40px auto;
   display: flex;
   flex-direction: column;
+  text-align: center;
+  font-size: 15px;
+  color: #304250;
   gap: 15px;
+  
 }
-
+.login-box h6{
+  display: flex;
+  font-size: 10px;
+  flex-direction: column;
+  text-align: center;
+}
 .login-box img {
   width: 70px;
   margin: 0 auto 10px;
@@ -109,42 +119,59 @@ img {
   color: white;
   cursor: pointer;
   z-index: 900;
-}
-
-/* ===== SIDE MENU ===== */
-.side-menu {
+}/* ===== OVERLAY ===== */
+#overlay {
   position: fixed;
-  top: 50px;
-  left: -250px;
-  width: 200px;
-  height: calc(100% - 50px);
-  background: rgba(0, 0, 0, 0.8);
-  padding-top: 20px;
-  transition: left 0.3s ease;
-  z-index: 800;
-}
-
-.side-menu.active {
+  top: 0;
   left: 0;
+  width: 100%;
+  height: 100%;
+
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(6px);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s ease;
+
+  z-index: 999;
 }
 
-.side-menu a {
-  display: block;
-  padding: 12px 20px;
-  color: white;
-  text-decoration: none;
-  font-size: 16px;
+#overlay.active {
+  opacity: 1;
+  visibility: visible;
 }
 
-.side-menu a:hover {
-  background: #1e90ff;
-}
-
-/* ===== FOOTER ===== */
-footer {
-  margin-top: auto;
-  padding: 15px;
-  background: #1c1c5e;
-  color: white;
+/* ===== POPUP BOX ===== */
+.popup {
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
   text-align: center;
+  transform: scale(0.7);
+  transition: 0.4s ease;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+#overlay.active .popup {
+  transform: scale(1);
+}
+
+.popup .icon {
+  width: 70px;
+  height: 70px;
+  background: #ff3b3b;
+  color: white;
+  font-size: 32px;
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin: 0 auto 20px;
 }
