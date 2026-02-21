@@ -16,7 +16,10 @@ window.addEventListener("load", () => {
   // Hiển thị tên user nếu có
   const user = localStorage.getItem("loggedInUser");
   if (user && header) {
-    header.textContent = "Homepage";
+    const title = document.querySelector(".header-title");
+    if (title) {
+      title.textContent = "Homepage";
+    }
   }
 });
 
@@ -40,4 +43,17 @@ document.addEventListener("DOMContentLoaded", function () {
       }, 600);
     });
   }
+});
+/* */
+
+const menuBtn = document.getElementById("menuBtn");
+const sideMenu = document.getElementById("sideMenu");
+
+menuBtn.addEventListener("click", () => {
+  menuBtn.addEventListener("click", () => {
+    sideMenu.classList.toggle("active");
+    menuBtn.classList.toggle("active");
+
+    menuBtn.innerHTML = sideMenu.classList.contains("active") ? "✖" : "☰";
+  });
 });

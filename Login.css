@@ -1,58 +1,67 @@
-body {
+/* ===== RESET ===== */
+* {
   margin: 0;
-  padding-top: 70px; /* tránh bị header đè */
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===== BODY ===== */
+body {
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  padding-top: 50px; /* đúng bằng chiều cao header */
   background: rgb(23, 23, 118);
   font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+body.loaded {
+  opacity: 1;
+}
+
+body.fade-out {
+  opacity: 0;
 }
 
 /* ===== HEADER ===== */
 .top-box {
   width: 100%;
-  height: 70px;
+  height: 50px;
   background: #3076d1;
   color: white;
+
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 20px;
-  font-weight: bold;
+
   position: fixed;
   top: 0;
   left: 0;
   z-index: 1000;
 
+  font-size: 20px;
+  font-weight: bold;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Logo trong header nếu có */
+/* ===== LOGO HEADER ===== */
 .top-logo {
   position: absolute;
-  left: 6px;
-  top: 15px;
+  left: 10px;
+  top: 5px;
 }
 
 .top-logo img {
-  width: 80px;
+  width: 40px;
+  height: auto;
 }
 
-/* ===== LOGO CHÍNH ===== */
+/* KHÔNG cho img ảnh hưởng toàn trang */
 img {
-  width: 120px;
-  margin-bottom: 20px;
-}
-
-/* ===== TEXT ===== */
-p {
-  text-align: center;
-  font-size: 20px;
-  font-weight: bold;
-  margin-bottom: 20px;
-  color: rgb(0, 0, 0); /* nền tối phải để chữ trắng */
+  max-width: 100%;
 }
 
 /* ===== LOGIN BOX ===== */
@@ -60,16 +69,16 @@ p {
   background: white;
   padding: 30px;
   border-radius: 15px;
+  width: 300px;
+  margin: 40px auto;
   display: flex;
   flex-direction: column;
   gap: 15px;
-  width: 300px;
 }
+
 .login-box img {
   width: 70px;
-  margin-bottom: 10px;
-  display: block;
-  margin: 0 auto;
+  margin: 0 auto 10px;
 }
 
 .login-box input {
@@ -84,99 +93,58 @@ p {
   border: none;
   background: #1e90ff;
   color: white;
+  cursor: pointer;
 }
+
 .login-box button:hover {
   background: #304250;
 }
-/* Overlay nền mờ */
-.overlay {
+
+/* ===== MENU BUTTON (NẰM DƯỚI HEADER) ===== */
+.menu-btn {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.4);
-  backdrop-filter: blur(6px);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.4s ease;
-  z-index: 999;
-}
-
-/* Khi active */
-.overlay.active {
-  opacity: 1;
-  visibility: visible;
-}
-
-/* Popup box */
-.popup {
-  background: white;
-  padding: 40px;
-  border-radius: 20px;
-  text-align: center;
-  transform: scale(0.7);
-  transition: all 0.4s ease;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-}
-
-/* Popup khi hiện */
-.overlay.active .popup {
-  transform: scale(1);
-}
-
-/* Icon đỏ */
-.popup .icon {
-  width: 70px;
-  height: 70px;
-  background: #ff3b3b;
+  top: 60px; /* 50px header + 10px */
+  left: 15px;
+  font-size: 28px;
   color: white;
-  font-size: 32px;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 auto 20px;
-  animation: rotateIn 0.5s ease;
+  cursor: pointer;
+  z-index: 900;
 }
 
-/* Animation icon */
-@keyframes rotateIn {
-  from {
-    transform: rotate(-180deg) scale(0.5);
-    opacity: 0;
-  }
-  to {
-    transform: rotate(0deg) scale(1);
-    opacity: 1;
-  }
+/* ===== SIDE MENU ===== */
+.side-menu {
+  position: fixed;
+  top: 50px;
+  left: -250px;
+  width: 200px;
+  height: calc(100% - 50px);
+  background: rgba(0, 0, 0, 0.8);
+  padding-top: 20px;
+  transition: left 0.3s ease;
+  z-index: 800;
 }
 
-/* Rung form */
-.shake {
-  animation: shake 0.4s;
+.side-menu.active {
+  left: 0;
 }
 
-@keyframes shake {
-  0% { transform: translateX(0); }
-  20% { transform: translateX(-8px); }
-  40% { transform: translateX(8px); }
-  60% { transform: translateX(-6px); }
-  80% { transform: translateX(6px); }
-  100% { transform: translateX(0); }
-}
-body {
-  opacity: 0;
-  transition: opacity 0.6s ease;
+.side-menu a {
+  display: block;
+  padding: 12px 20px;
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
 }
 
-body.loaded {
-  opacity: 1;
+.side-menu a:hover {
+  background: #1e90ff;
 }
 
-body.fade-out {
-  opacity: 0;
+/* ===== FOOTER ===== */
+footer {
+  margin-top: auto;
+  padding: 15px;
+  background: #1c1c5e;
+  color: white;
+  text-align: center;
 }
