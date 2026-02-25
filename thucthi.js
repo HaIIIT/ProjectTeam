@@ -18,7 +18,7 @@ window.addEventListener("load", () => {
   if (user && header) {
     const title = document.querySelector(".header-title");
     if (title) {
-      title.textContent = "Homepage";
+      title.textContent = "Thực thi và Khảo sát";
     }
   }
 });
@@ -56,11 +56,4 @@ menuBtn.addEventListener("click", () => {
 
     menuBtn.innerHTML = sideMenu.classList.contains("active") ? "✖" : "☰";
   });
-});
-// Hiển thị thông báo khi load trang
-window.addEventListener("load", function () {
-  const announcement = localStorage.getItem("announcement");
-  if (announcement) {
-    document.getElementById("announcementText").innerText = announcement;
-  }
 });

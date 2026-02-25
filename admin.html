@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Panel</title>
+  <link rel="stylesheet" href="admin.css">
+  <script>
+  if (sessionStorage.getItem("role") !== "admin") {
+    window.location.href = "index.html";
+  }
+</script>
+</head>
+<body>
+
+  <h1>🔐 Trang Quản Trị</h1>
+
+  <!-- ===== THÔNG BÁO ===== -->
+  <div class="box">
+    <h2>📢 Nhập Thông Báo</h2>
+    <textarea id="announcementInput" rows="4"></textarea>
+    <button onclick="saveAnnouncement()">Lưu Thông Báo</button>
+  </div>
+
+  <!-- ===== ĐÁNH GIÁ ===== -->
+  <div class="box">
+    <h2>📝 Danh Sách Đánh Giá</h2>
+    <div id="reviewList"></div>
+  </div>
+
+  <button class="back-btn" onclick="window.location.href='home.html'">
+    ⬅ Quay về Trang Chủ
+</button>
+
+    <script src="admin.js"></script>
+</body>
+</html>

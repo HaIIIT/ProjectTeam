@@ -155,24 +155,3 @@ footer {
 .hide-btn {
   display: none;
 }
-.announcement-box {
-  width: 80%;
-  max-width: 800px;
-  margin: 100px auto 30px;
-
-  background: white;
-  padding: 20px 30px;
-  border-radius: 15px;
-
-  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-}
-
-.announcement-box h2 {
-  margin-bottom: 15px;
-  color: #1e90ff;
-}
-
-.announcement-box p {
-  font-size: 16px;
-  line-height: 1.6;
-}

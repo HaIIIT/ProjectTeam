@@ -1,13 +1,12 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home - Trang Chủ</title>
-
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timeline - Deadline</title>
     <script>
       if (!localStorage.getItem("loggedInUser")) {
-        window.location.href = "index.html";
+        window.location.href = "home.html";
       }
       window.addEventListener("load", () => {
         document.body.classList.add("loaded");
@@ -90,14 +89,14 @@
       content=".img/icon/ms-icon-144x144.png"
     />
     <meta name="theme-color" content="#ffffff" />
-    <link rel="stylesheet" href="home.css" />
-  </head>
-  <body>
+    <link rel="stylesheet" href="time.css">
+</head>
+<body>
     <div class="top-box">
       <div class="top-logo">
         <img src="img/logo.png" />
-      </div>
-      <span class="header-title">Homepage</span>
+    </div>
+      <span class="header-title">Timeline - Deadline</span>
     </div>
     <div class="menu-btn" id="menuBtn">☰</div>
     <div class="side-menu" id="sideMenu">
@@ -110,14 +109,10 @@
       <a href="danhgia.html">Bảng đánh giá</a>
       <a href="HeplDesk.html">HelpDesk</a>
     </div>
-    <div class="announcement-box">
-      <h2>📢 Thông Báo</h2>
-      <p id="announcementText">Chưa có thông báo mới.</p>
-    </div>
     <div class="end-box"></div>
     <footer>
       📍 Khoa Công Nghệ Thông Tin - Vlute || 📧 haimajorit@gmail.com
     </footer>
-  </body>
-  <script src="home.js"></script>
+</body>
+    <script src="time.js"></script>
 </html>

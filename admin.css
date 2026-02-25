@@ -1,0 +1,50 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial;
+}
+
+body {
+  background: rgb(23, 23, 118);
+  color: white;
+  padding: 40px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.box {
+  background: white;
+  color: black;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 25px;
+}
+
+textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  margin: 10px 0;
+}
+
+button {
+  padding: 8px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background: #1e90ff;
+  color: white;
+}
+
+button:hover {
+  background: #304250;
+}
+
+.back-btn {
+  display: block;
+  margin: 0 auto;
+}
