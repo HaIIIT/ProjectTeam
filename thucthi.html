@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="vi">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Thực thi Và Khảo sát</title>
@@ -89,13 +89,13 @@
       content=".img/icon/ms-icon-144x144.png"
     />
     <meta name="theme-color" content="#ffffff" />
-    <link rel="stylesheet" href="thuthi.css">
-</head>
-<body>
+    <link rel="stylesheet" href="thuthi.css" />
+  </head>
+  <body>
     <div class="top-box">
       <div class="top-logo">
         <img src="img/logo.png" />
-    </div>
+      </div>
       <span class="header-title">Thực thi Và Khảo sát </span>
     </div>
     <div class="menu-btn" id="menuBtn">☰</div>
@@ -109,10 +109,51 @@
       <a href="danhgia.html">Bảng đánh giá</a>
       <a href="HeplDesk.html">HelpDesk</a>
     </div>
+    <div class="iot-card">
+      <img src="img/write.png" class="book-icon" alt="book" />
+
+      <h2>Đăng ký nội dung báo cáo IOT</h2>
+
+      <div class="iot-content">
+        <div class="left">
+          <p>Sinh viên thực hiện đăng ký cảm biến cho đề tài nhà thông minh</p>
+        </div>
+
+        <button class="register-btn">Đăng Ký →</button>
+      </div>
+    </div>
+    <!-- ===== POPUP FORM ===== -->
+    <div class="modal" id="registerModal">
+      <div class="modal-box">
+        <span class="close-btn" onclick="closeModal()">×</span>
+
+        <h3>Đăng ký cảm biến</h3>
+
+        <form id="registerForm">
+          <label>Họ và tên</label>
+          <input type="text" required />
+
+          <label>Mã sinh viên</label>
+          <input type="text" required />
+
+          <label>Chọn cảm biến</label>
+          <select required>
+            <option value="">-- Chọn cảm biến --</option>
+            <option>Cảm biến nhiệt độ</option>
+            <option>Cảm biến độ ẩm</option>
+            <option>Cảm biến ánh sáng</option>
+            <option>Cảm biến chuyển động</option>
+            <option>Cảm biến khí gas</option>
+          </select>
+
+          <button type="submit" class="submit-btn">Gửi đăng ký</button>
+        </form>
+      </div>
+    </div>
     <div class="end-box"></div>
     <footer>
       📍 Khoa Công Nghệ Thông Tin - Vlute || 📧 haimajorit@gmail.com
     </footer>
-</body>
-    <script src="thucthi.js"></script>
+  </body>
+  <script src="thucthi.js"></script>
 </html>

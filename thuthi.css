@@ -109,7 +109,7 @@ footer {
   left: -250px;
   width: 190px;
   height: calc(100% - 50px); /* trừ header */
-  background: rgba(99, 118, 212, 0.367);
+  background: rgba(2, 15, 77, 0.367);
   transition: left 0.3s ease;
 }
 
@@ -154,4 +154,135 @@ footer {
 }
 .hide-btn {
   display: none;
+}
+body {
+    background: #221f7a;
+    font-family: Arial, sans-serif;
+}
+
+.iot-card {
+    width: 90%;
+    max-width: 600px;
+    margin: 60px auto;
+    background: #e9ecef;
+    border-radius: 20px;
+    padding: 15px 20px 25px; /* giảm padding-top */
+    position: relative;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+}
+
+.iot-card h2 {
+    text-align: center;
+    margin: 5px 0 0px 0; /* bỏ margin-top mặc định */
+}
+
+.book-icon {
+    position: absolute;
+    top: -30px;
+    left: -20px;
+    width: 80px;
+}
+
+.iot-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    max-width: 70%;
+}
+
+.left p {
+    font-size: 20px;
+    gap: 40px;
+}
+
+.icon {
+    width: 80px;
+    font-size: 24px;
+}
+
+.register-btn {
+    background: linear-gradient(to right, #5aa9e6, #1b6ec2);
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.register-btn:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+/* ===== MODAL ===== */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.modal-box {
+    background: #fff;
+    padding: 25px;
+    width: 90%;
+    max-width: 400px;
+    border-radius: 15px;
+    animation: fadeIn 0.3s ease;
+}
+
+.modal-box h3 {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.modal-box label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.modal-box input,
+.modal-box select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+.submit-btn {
+    margin-top: 15px;
+    width: 100%;
+    padding: 10px;
+    background: #1b6ec2;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    opacity: 0.9;
+}
+
+.close-btn {
+    float: right;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+@keyframes fadeIn {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
 }

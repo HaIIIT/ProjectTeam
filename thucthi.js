@@ -57,3 +57,25 @@ menuBtn.addEventListener("click", () => {
     menuBtn.innerHTML = sideMenu.classList.contains("active") ? "✖" : "☰";
   });
 });
+/*Form đăng ký cảm biến */
+
+const modal = document.getElementById("registerModal");
+const registerBtn = document.querySelector(".register-btn");
+
+registerBtn.addEventListener("click", function () {
+  modal.style.display = "flex";
+});
+
+function closeModal() {
+  modal.style.display = "none";
+}
+
+// Submit form
+document
+  .getElementById("registerForm")
+  .addEventListener("submit", function (e) {
+    e.preventDefault();
+    alert("Đăng ký thành công!");
+    modal.style.display = "none";
+    this.reset();
+  });
