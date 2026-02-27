@@ -119,7 +119,7 @@
           <p>Sinh viên thực hiện đăng ký cảm biến cho đề tài nhà thông minh</p>
         </div>
 
-        <button class="register-btn">Đăng Ký →</button>
+        <button class="register-btn" type="button">Đăng Ký →</button>
       </div>
     </div>
     <!-- ===== POPUP FORM ===== -->
@@ -131,23 +131,35 @@
 
         <form id="registerForm">
           <label>Họ và tên</label>
-          <input type="text" required />
+          <input type="text" id="fullname" name="fullname" required />
 
           <label>Mã sinh viên</label>
-          <input type="text" required />
+          <input type="text" id="mssv" name="mssv" required />
 
           <label>Chọn cảm biến</label>
-          <select required>
+          <select id="sensor" name="sensor" required>
             <option value="">-- Chọn cảm biến --</option>
-            <option>Cảm biến nhiệt độ</option>
-            <option>Cảm biến độ ẩm</option>
-            <option>Cảm biến ánh sáng</option>
-            <option>Cảm biến chuyển động</option>
-            <option>Cảm biến khí gas</option>
+            <option value="Cảm biến nhiệt độ">Cảm biến nhiệt độ</option>
+            <option value="Cảm biến độ ẩm">Cảm biến độ ẩm</option>
+            <option value="Cảm biến ánh sáng">Cảm biến ánh sáng</option>
+            <option value="Cảm biến chuyển động">Cảm biến chuyển động</option>
+            <option value="Cảm biến khí gas">Cảm biến khí gas</option>
           </select>
 
           <button type="submit" class="submit-btn">Gửi đăng ký</button>
         </form>
+      </div>
+    </div>
+    <!-- Popup thông báo thành công -->
+    <div id="successModal" class="success-modal">
+      <div class="success-content">
+        <img
+          src="img/Logo_CaNhan-removebg-preview.png"
+          alt="Logo"
+          class="success-logo"
+        />
+        <h2>Bạn đã đăng ký thành công</h2>
+        <button onclick="closeSuccess()">Đóng</button>
       </div>
     </div>
     <div class="end-box"></div>
@@ -155,5 +167,6 @@
       📍 Khoa Công Nghệ Thông Tin - Vlute || 📧 haimajorit@gmail.com
     </footer>
   </body>
-  <script src="thucthi.js"></script>
+  <script type="module" src="thucthi.js"></script>
+  
 </html>
