@@ -7,6 +7,9 @@ import {
   getFirestore,
   collection,
   addDoc,
+  getDocs,
+  query,
+  where,
 } from "https://www.gstatic.com/firebasejs/12.9.0/firebase-firestore.js";
 
 // =======================
@@ -86,9 +89,9 @@ document.addEventListener("DOMContentLoaded", () => {
     if (modal) modal.style.display = "none";
   };
   window.closeSuccess = function () {
-  const successModal = document.getElementById("successModal");
-  if (successModal) successModal.style.display = "none";
-};
+    const successModal = document.getElementById("successModal");
+    if (successModal) successModal.style.display = "none";
+  };
 
   // ===== FORM SUBMIT (CHỈ 1 LẦN DUY NHẤT) =====
   const form = document.getElementById("registerForm");
@@ -108,6 +111,20 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log("DATA:", fullname, mssv, sensor);
 
     try {
+      // 🔎 KIỂM TRA TRÙNG SENSOR
+      const q = query(
+        collection(db, "registrations"),
+        where("sensor", "==", sensor),
+      );
+
+      const querySnapshot = await getDocs(q);
+
+      if (!querySnapshot.empty) {
+        alert("Cảm biến này đã được đăng ký rồi!");
+        return;
+      }
+
+      // ✅ Nếu không trùng thì mới lưu
       await addDoc(collection(db, "registrations"), {
         fullname,
         mssv,
@@ -116,10 +133,9 @@ document.addEventListener("DOMContentLoaded", () => {
         created_at: new Date(),
       });
 
+      // Reset form & đóng modal
       form.reset();
-
       if (modal) modal.style.display = "none";
-
       document.getElementById("successModal").style.display = "flex";
     } catch (error) {
       console.error("Lỗi Firebase:", error);
