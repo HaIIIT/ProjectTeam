@@ -76,12 +76,11 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // ===== MODAL =====
-  const modal = document.getElementById("registerModal");
   const registerBtn = document.querySelector(".register-btn");
 
-  if (registerBtn && modal) {
+  if (registerBtn) {
     registerBtn.addEventListener("click", () => {
-      modal.style.display = "flex";
+      window.location.href = "404.html";
     });
   }
 

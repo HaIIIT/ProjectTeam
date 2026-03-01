@@ -158,7 +158,7 @@ footer {
 .announcement-box {
   width: 80%;
   max-width: 800px;
-  margin: 100px auto 30px;
+  margin: 100px auto -50px;
 
   background: white;
   padding: 20px 30px;
@@ -173,6 +173,26 @@ footer {
 }
 
 .announcement-box p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.DotNet-box {
+  width: 80%;
+  max-width: 800px;
+  margin: 100px auto 30px;
+  background: white;
+  padding: 20px 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.DotNet-box h2 {
+  margin-bottom: 15px;
+  color: #1e90ff;
+}
+
+.DotNet-box p {
   font-size: 16px;
   line-height: 1.6;
 }
