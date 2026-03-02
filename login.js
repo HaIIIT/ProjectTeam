@@ -25,6 +25,8 @@ document.addEventListener("DOMContentLoaded", function () {
     { username: "24004206", password: "k49@fit", role: "user" },
     { username: "24004207", password: "k49@fit", role: "user" },
     { username: "24004181", password: "k49@fit", role: "user" },
+    { username: "24004197", password: "k49@fit", role: "user" },
+    { username: "24004196", password: "k49@fit", role: "user" },
 
     // ===== ADMIN =====
     { username: "admin", password: "admin123", role: "admin" }
